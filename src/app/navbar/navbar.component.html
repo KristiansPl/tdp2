@@ -1,0 +1,18 @@
+<mat-toolbar class="navbar">
+    <div class="logo">
+        <a class="navLink" routerLink="" routerLinkActive="Active"><img class="logoPic" src="man.png" alt=""></a>
+    </div>
+    <div class="title">
+        <a class="navLink" routerLink="" routerLinkActive="Active"><h1>Ceļš uz LU</h1></a>
+    </div>
+    <div class="modeToggle">
+        <mat-slide-toggle class="switch" (change)="changeTheme()"></mat-slide-toggle>
+    </div>
+    <div class="navButtons">
+        <button routerLink="/fakultāte" routerLinkActive="Active" mat-button>Fakultāte</button>
+        <button routerLink="/kursi" routerLinkActive="Active" mat-button>Kursi</button>
+        <button routerLink="/zināšanas" routerLinkActive="Active" mat-button>Zināšanas</button>
+        <button routerLink="/ceļš" routerLinkActive="Active" mat-button>Ceļš</button>
+        <button routerLink="/izaicinājumi" routerLinkActive="Active" mat-button>Izaicinājumi</button>
+    </div>
+</mat-toolbar>

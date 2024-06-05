@@ -1,0 +1,50 @@
+
+.brother {
+    background-image: url("../../../public/brother.png");
+    background-size: cover;
+}
+
+.mother {
+  background-image: url("../../../public/mother.png");
+  background-size: cover;
+}
+
+.cat {
+  background-image: url("../../../public/cat.png");
+  background-size: cover;
+}
+
+.mat-mdc-card-avatar{
+  height: 3rem !important;
+  width: 3rem !important;
+}
+
+@media screen and (min-width: 850px) {
+
+  mat-card-content{
+    font-size: 1.6rem !important
+  }
+
+  mat-card-subtitle{
+    font-size: 1.2rem !important;
+  }
+
+  mat-card-title{
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 849px) {
+
+  mat-card-content{
+    font-size: 1.2rem !important
+  }
+
+  mat-card-subtitle{
+    font-size: 1.2rem !important;
+  }
+
+  mat-card-title{
+    font-size: 1.3rem !important;
+  }
+}

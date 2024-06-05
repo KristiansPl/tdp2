@@ -1,0 +1,10 @@
+<mat-card class="profileCard">
+    <mat-card-header>
+        <div mat-card-avatar [ngClass]="name == 'Niks Plots' ? 'brother' : name == 'Kristīne Plote' ? 'mother' : 'cat'"></div>
+        <mat-card-title>{{name}}</mat-card-title>
+        <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        {{description}}
+    </mat-card-content>
+</mat-card>

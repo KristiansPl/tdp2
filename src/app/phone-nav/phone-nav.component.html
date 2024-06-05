@@ -1,0 +1,25 @@
+<div class="phoneNav">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-slide-toggle class="switch" (change)="changeTheme()"></mat-slide-toggle>
+      <mat-menu #menu="matMenu">
+        <div class="navButtonsPhone">
+            <div class="phoneButtons">
+                <div class="homeButton">
+                    <div class="logo">
+                        <a class="navLink" routerLink="" routerLinkActive="Active"><img class="logoPic" src="man.png" alt=""></a>
+                    </div>
+                    <div class="title">
+                        <a class="navLink" routerLink="" routerLinkActive="Active"><h1>Ceļš uz LU</h1></a>
+                    </div>
+                </div>
+                <button routerLink="/fakultāte" routerLinkActive="Active" mat-button>Fakultāte</button>
+                <button routerLink="/kursi" routerLinkActive="Active" mat-button>Kursi</button>
+                <button routerLink="/zināšanas" routerLinkActive="Active" mat-button>Zināšanas</button>
+                <button routerLink="/ceļš" routerLinkActive="Active" mat-button>Ceļš</button>
+                <button routerLink="/izaicinājumi" routerLinkActive="Active" mat-button>Izaicinājumi</button>
+            </div>
+        </div>
+      </mat-menu>
+</div>

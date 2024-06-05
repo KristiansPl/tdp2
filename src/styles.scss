@@ -1,1 +1,651 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@use '../m3-theme';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Define the theme object.
+$tdp2-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+html {
+  // Apply the light theme by default
+  @include mat.core-theme(m3-theme.$light-theme);
+  @include mat.button-theme(m3-theme.$light-theme);
+  font-family: Open-sans !important;
+}
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($tdp2-theme);
+}
+
+:root {
+  --text-color: black;
+  --title-color: #443D25;
+  --lmain-color: #ECF9FF;
+  --lsecond-color: #FFFBEB;
+  --lthird-color: #FFE7CC;
+  --lforth-color: #F8CBA6;
+  --stroke-color: #F8CBA6;
+  --invert: 0;
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($theme);
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: Open-sans !important;
+  src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap") format("stylesheet") !important;
+}
+
+body { margin: 0; font-family: Open-sans !important}
+
+
+@media screen and (min-width: 850px) {
+
+  body .content{
+    background-color: var(--lmain-color);
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+    overflow-y: visible;
+    justify-content: center;
+  }
+
+  mat-toolbar{
+    position: fixed;
+    display: inline-block;
+  }
+
+  .modeToggle {
+    margin-left: 1rem;
+  }
+
+  h1 {
+    font-family: Open-sans !important;
+    color: var(--title-color);
+    font-size: 3em;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 3em;
+    color: var(--title-color);
+    text-align: center;
+  }
+
+  .mat-mdc-tab .mdc-tab__content{
+    font-size: 2.5rem !important;
+  }
+
+  .backdrop{
+    background-image: url("/BlackBackdrop.png");
+    width: auto;
+    border-radius: 11.5%;
+  }
+
+  .mat-mdc-button:not(:disabled) {
+    background-color: var(--lthird-color);
+  }
+
+  span.mdc-button__label {
+    font-family: Open-sans !important;
+    color: var(--text-color);
+  }
+  .mat-mdc-button:hover {
+    color: var(--text-color);
+    background-color: var(--lthird-color);
+  }
+
+  .mdc-switch:enabled div.mdc-switch__track::after {
+    
+    background: var(--lthird-color) !important;
+    background-color: var(--lthird-color) !important;
+  }
+
+  .mdc-switch:enabled .mdc-switch__track::before{
+    
+    background: var(--lthird-color) !important;
+    background-color: var(--lthird-color) !important;
+  }
+
+  .mat-mdc-button {
+    color: var(--text-color);
+    background-color: var(--lthird-color);
+    margin-left: 0.5rem;
+    width: 7.2rem;
+  }
+
+  .mat-mdc-button:last-child {
+    margin-right: 0;
+  }
+
+  .mat-mdc-button-base {
+    font-size: 1.2rem !important;
+  }
+
+  .navButtons{
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+  }
+
+  .mat-toolbar.navbar{
+    background-color: var(--lsecond-color);
+    width: 100%;
+    height: 5rem;
+    min-width: 3rem;
+    z-index: 10;
+  }
+
+  .selfPicture{
+    max-width: 55%;
+    margin: auto;
+    display: block;
+    border-radius: 11.5%;
+  }
+
+  .facultyPicture{
+    max-width: 55%;
+    margin: auto;
+    display: block;
+    filter: invert(var(--invert));
+    -webkit-filter: invert(var(--invert));
+  }
+
+  .portraitContainer{
+    margin: auto;
+    display: block;
+    margin-top: 2rem;
+    position: relative;
+    text-align: center;
+    color: var(--stroke-color);
+  }
+
+  .logo{
+    padding-right: 0.5rem;
+    filter: invert(var(--invert));
+    -webkit-filter: invert(var(--invert));
+  }
+
+  img.logoPic{
+    width: 1.5rem;
+    height: 3rem;
+  }
+
+  .introText{
+    margin: auto;
+    max-width: 70%;
+    text-align: justify;
+    text-indent: 2rem;
+    display: inline-flex;
+  }
+
+  .structs{
+    margin: auto;
+    display: block;
+  }
+
+  .centerDiv{
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    text-align: justify;
+    display: inline-flex;
+  }
+
+  p{
+    color: var(--text-color);
+    font-size: 2rem;
+  }
+
+  .line {
+    width: 100px;
+    height: 1000px;
+  }
+
+  .svg{
+    margin-right: 2rem;
+  }
+
+  .lastSVG{
+    transform: scaleX(-1);
+    margin-left: 2rem;
+    margin-right: 0rem;
+  }
+
+  .portraitText{
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
+    transform: translate(-50%, 0%);
+    text-shadow: 0 0 3px #443D25, 0 0 5px #443D25;
+  }
+
+  .profileCard {
+    max-width: 28vw;
+    width: 28vw;
+    height: 24vh;
+  }
+
+  .mat-mdc-card {
+    background-color: var(--lforth-color) !important;
+    color: var(--text-color);
+  }
+
+  .mat-mdc-card-subtitle {
+    color: var(--text-color) !important;
+  }
+
+  .profileCardsDiv {
+    display: inline-flex;
+  }
+
+  .leftCard{
+    rotate: -3deg;
+  }
+
+  .middleCard{
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+  .rightCard{
+    rotate: 3deg;
+  }
+
+  .footer{
+    background-color: var(--lsecond-color);
+    color: var(--text-color);
+  }
+
+  .navText {
+    margin-top: 0;
+  }
+
+  .inlineFlex {
+    display: inline-flex;
+  }
+
+  .footer1{
+    width: 50vw;
+    padding-left: 2rem;
+  }
+
+  .footer2{
+    padding-right: 2rem;
+  }
+
+  a{
+    filter: invert(var(--invert));
+    -webkit-filter: invert(var(--invert));
+  }
+
+  .phoneNav{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 849px) {
+
+  body .content{
+    background-color: var(--lmain-color);
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+    overflow-y: visible;
+    justify-content: center;
+  }
+
+  mat-toolbar{
+    position: fixed;
+    display: inline-block;
+  }
+
+  .modeToggle {
+    margin-left: 1rem;
+  }
+
+  h1 {
+    color: var(--title-color);
+    font-size: 1.8em;
+    text-align: center;
+    font-family: Open-sans !important;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.8em;
+    color: var(--title-color);
+    text-align: center;
+  }
+
+  .backdrop{
+    background-image: url("/BlackBackdrop.png");
+    width: auto;
+    border-radius: 11.5%;
+  }
+
+  .mat-mdc-button:not(:disabled) {
+    background-color: var(--lthird-color);
+  }
+
+  span.mdc-button__label {
+    color: var(--text-color);
+    font-family: Open-sans !important;
+  }
+  .mat-mdc-button:hover {
+    color: var(--text-color);
+    background-color: var(--lthird-color);
+  }
+
+  .mdc-switch:enabled div.mdc-switch__track::after {
+    
+    background: var(--lthird-color) !important;
+    background-color: var(--lthird-color) !important;
+  }
+
+  .mdc-switch:enabled .mdc-switch__track::before{
+    
+    background: var(--lthird-color) !important;
+    background-color: var(--lthird-color) !important;
+  }
+
+  .mat-mdc-button {
+    color: var(--text-color);
+    background-color: var(--lthird-color);
+    margin-left: 0.5rem;
+    width: 40vw;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .mat-mdc-button:last-child {
+    margin-right: 0;
+  }
+
+  .mat-mdc-button-base {
+    font-size: 1rem !important;
+  }
+
+  .navButtons{
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+  }
+
+  .phoneNav{
+    position: fixed;
+    background-color: var(--lsecond-color);
+    width: 100%;
+    height: auto;
+    min-width: 3rem;
+    z-index: 10;
+  }
+
+  .mat-toolbar.navbar{
+    display: none;
+  }
+
+  .selfPicture{
+    max-width: 90%;
+    margin: auto;
+    display: block;
+    border-radius: 11.5%;
+  }
+
+  .facultyPicture{
+    max-width: 90%;
+    margin: auto;
+    display: block;
+    filter: invert(var(--invert));
+    -webkit-filter: invert(var(--invert));
+  }
+
+  .portraitContainer{
+    margin: auto;
+    display: block;
+    margin-top: 2rem;
+    position: relative;
+    text-align: center;
+    color: var(--stroke-color);
+  }
+
+  .logo{
+    padding-right: 0.5rem;
+    filter: invert(var(--invert));
+    -webkit-filter: invert(var(--invert));
+  }
+
+  img.logoPic{
+    width: 1.5rem;
+    height: 3rem;
+  }
+
+  .introText{
+    margin: auto;
+    max-width: 90%;
+    text-align: justify;
+    text-indent: 2rem;
+    display: inline-flex;
+  }
+
+  .structs{
+    margin: auto;
+    display: block;
+  }
+
+  .centerDiv{
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    text-align: justify;
+    display: inline-flex;
+  }
+
+  p{
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+
+  .line {
+    width: 100px;
+    height: 1000px;
+  }
+
+  .svg{
+    display: none;
+    margin-right: 2rem;
+  }
+
+  .lastSVG{
+    display: none;
+    transform: scaleX(-1);
+    margin-left: 2rem;
+    margin-right: 0rem;
+  }
+
+  .portraitText{
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
+    transform: translate(-50%, 0%);
+    text-shadow: 0 0 3px #443D25, 0 0 5px #443D25;
+  }
+
+  .profileCard {
+    max-width: 80vw;
+    width: 80vw;
+    height: 25vh;
+  }
+
+  .mat-mdc-card {
+    background-color: var(--lforth-color) !important;
+    color: var(--text-color);
+  }
+
+  .mat-mdc-card-subtitle {
+    color: var(--text-color) !important;
+  }
+
+  .profileCardsDiv {
+  }
+
+  .leftCard{
+  }
+
+  .middleCard{
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+  .rightCard{
+  }
+
+  .footer{
+    background-color: var(--lsecond-color);
+    color: var(--text-color);
+  }
+
+  .navText {
+    margin-top: 0;
+  }
+
+  .inlineFlex {
+    display: inline-flex;
+  }
+
+  .footer1{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .aLink{
+    filter: invert(var(--invert));
+    -webkit-filter: invert(var(--invert));
+  }
+
+  .hidePhone{
+    display: none;
+  }
+
+  .mat-mdc-menu-panel{
+    max-width: none !important;
+    width: 100vw;
+    background-color: var(--lsecond-color) !important;
+  }
+
+  .switch{
+    padding-top: 0.2rem;
+  }
+
+  .mdc-form-field {
+    vertical-align: sub !important;
+  }
+
+  .navButtonsPhone{
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+  }
+
+  .phoneButtons{
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    display: grid;
+  }
+
+  .homeButton{
+    display: flex;
+    margin: auto;
+  }
+
+  .mat-mdc-tab .mdc-tab__content{
+    font-size: 1.5rem !important;
+  }
+}
+
+.margin2rem{
+  margin-top: 2rem;
+}
+
+.navLink{
+  filter: var(--invert);
+  text-decoration: none
+}
+
+.youtube{
+  padding-top: 0.25rem;
+}
+
+.mat-mdc-tab .mdc-tab__content{
+  font-family: Open-sans !important;
+  color: var(--text-color) !important;
+}
+
+.mat-mdc-tab .mdc-tab__text-label{
+  color: var(--text-color) !important;
+}
+
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label{
+  color: var(--text-color) !important;
+}
+
+.mdc-tab-indicator__content--underline {
+  --mdc-tab-indicator-active-indicator-color: var(--lforth-color) !important;
+}
+
+.mdc-tab-indicator__content--underline.cdk-focused {
+  --mdc-tab-indicator-active-indicator-color: var(--lforth-color) !important;
+}
